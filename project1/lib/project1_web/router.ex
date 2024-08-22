@@ -1,4 +1,5 @@
 defmodule Project1Web.Router do
+  alias Project1Web.HelloController
   use Project1Web, :router
 
   pipeline :browser do
@@ -17,8 +18,10 @@ defmodule Project1Web.Router do
   scope "/", Project1Web do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", UserController, :home
+    resources "/users",UserController
     get "/hello", HelloController, :index
+    get "/hello/:user", HelloController, :show
   end
 
 
