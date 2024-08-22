@@ -18,7 +18,9 @@ defmodule Project1Web.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/hello", HelloController, :index
   end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", Project1Web do
